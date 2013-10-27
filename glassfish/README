@@ -1,0 +1,2 @@
+A simple glassfish startup script for vagrant. It starts a glassfish server 
+that can be accessed with the regular addresses, 8080 or 4848 for admin interface 
