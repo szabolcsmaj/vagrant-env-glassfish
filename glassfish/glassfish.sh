@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 GF_UNZIP_TARGET="/opt/"
 ASADMIN="${GF_UNZIP_TARGET}glassfish4/bin/asadmin"
 PASSWORD_FILE="/tmp/password.file"
@@ -54,9 +53,12 @@ remove_password_file() {
 	rm -f $PASSWORD_FILE
 }
 
-bootstrap_system
-get_glassfish
-unpack_glassfish
-glassfish_setup
-glassfish_enable_secure_admin
-remove_password_file
+if [ ! -d "${GF_UNZIP_TARGET}glassfish4" ]; then
+	# If glassfish is not installed
+	bootstrap_system
+	get_glassfish
+	unpack_glassfish
+	glassfish_setup
+	glassfish_enable_secure_admin
+	remove_password_file
+fi
