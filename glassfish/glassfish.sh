@@ -6,7 +6,7 @@ PASSWORD_FILE="/tmp/password.file"
 
 bootstrap_system() {
 	sudo apt-get -y -q update
-	sudo apt-get -y -q install unzip vim openjdk-7-jre 
+	sudo apt-get -y -q install unzip vim openjdk-7-jdk 
 }
 
 glassfish_setup() {
